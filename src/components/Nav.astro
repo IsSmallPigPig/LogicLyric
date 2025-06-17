@@ -1,11 +1,11 @@
 ---
 const links = [
-  { path: "/", name: "网站首页", icon: "icon-home" },
-  { path: "/posts", name: "文海拾贝", icon: "icon-book" },
-  { path: "/projects", name: "项目作品", icon: "icon-code" },
-  { path: "/friends", name: "四海友邻", icon: "icon-friend" },
-  { path: "/moments", name: "闲言碎语", icon: "icon-chat" },
-  { path: "/about", name: "我的碑铭", icon: "icon-me" }
+  { path: "/", name: "Home", icon: "icon-home" },
+  { path: "/posts", name: "Blogs", icon: "icon-book" },
+  { path: "/projects", name: "Project", icon: "icon-code" },
+  { path: "/friends", name: "Friends", icon: "icon-friend" },
+  { path: "/moments", name: "Moments", icon: "icon-chat" },
+  { path: "/about", name: "About", icon: "icon-me" }
 ];
 ---
 <nav class="sticky top-0 z-50 border-b border-accent/10 backdrop-blur-lg bg-surface/30 dark:bg-surface/50 transition-colors">
@@ -148,11 +148,16 @@ const links = [
     });
   });
 
-  // 初始化主题（保持原有）
   const initTheme = () => {
     const savedTheme = localStorage.getItem('theme') || 
       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    // 替换点击事件处理器
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      if (window.__toggleTheme) {
+        window.__toggleTheme();
+      }
+    });
+
   };
 
   document.getElementById('theme-toggle').addEventListener('click', () => {
@@ -167,11 +172,5 @@ const links = [
   });
 
   initTheme();
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem('theme')) {
-      document.documentElement.classList.toggle('dark', e.matches);
-    }
-  });
 </script>
-
 
