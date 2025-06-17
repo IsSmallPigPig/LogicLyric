@@ -1,26 +1,25 @@
 ---
 const links = [
-  { path: "/", name: "Home", icon: "icon-home" },
-  { path: "/posts", name: "Blogs", icon: "icon-book" },
-  { path: "/projects", name: "Project", icon: "icon-code" },
-  { path: "/friends", name: "Friends", icon: "icon-friend" },
-  { path: "/moments", name: "Moments", icon: "icon-chat" },
-  { path: "/about", name: "About", icon: "icon-me" }
+  { path: "/", name: "网站首页", icon: "icon-home" },
+  { path: "/posts", name: "文海拾贝", icon: "icon-book" },
+  { path: "/projects", name: "项目作品", icon: "icon-code" },
+  { path: "/friends", name: "四海友邻", icon: "icon-friend" },
+  { path: "/moments", name: "闲言碎语", icon: "icon-chat" },
+  { path: "/about", name: "我的碑铭", icon: "icon-me" }
 ];
 ---
-
 <nav class="sticky top-0 z-50 border-b border-accent/10 backdrop-blur-lg bg-surface/30 dark:bg-surface/50 transition-colors">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex items-center justify-between h-16">
       <!-- 左侧品牌 -->
       <a 
         href="/" 
-        class="text-xl font-serif font-bold hover:text-accent transition-colors flex items-center gap-2"
+        class="text-xl font-bold hover:text-accent transition-colors flex items-center gap-2"
       >
         <svg class="w-6 h-6 text-accent md:block hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
         </svg>
-        LogicLyric
+        Anko Blog
       </a>
 
       <!-- 移动端菜单按钮 -->
@@ -128,7 +127,7 @@ const links = [
   }
 </style>
 
-<script>
+<script is:inline>
   // 移动端菜单切换
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileNav = document.getElementById('mobile-nav');
@@ -174,3 +173,5 @@ const links = [
     }
   });
 </script>
+
+
